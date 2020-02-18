@@ -1,0 +1,16 @@
+apiVersion : apps/v1beta1
+kind: Deployment
+metadata:
+  name: kpwithingress
+spec:
+  replicas: 2
+  template:
+    metadata:
+      labels:
+        app: kpwithingress
+    spec:
+      containers:
+        - name: kpwithingress
+          image: kapasrijkubacr.azurecr.io/kpwithingress
+          ports:
+          - containerPort: 8080
